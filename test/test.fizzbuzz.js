@@ -1,10 +1,11 @@
 var assert = require('assert'),
-  fizzbuzznum = require('../src/fizzbuzz.js').fizzbuzznum;
+  fizzbuzznum = require('../src/fizzbuzz.js').fizzbuzznum,
+  fizzbuzz_general = require('../src/fizzbuzz.js').fizzbuzz_general;
 
 //http://codingdojo.org/cgi-bin/wiki.pl?KataFizzBuzz
 //mocha -u tdd test.fizzbuzz.js
 
-suite('fizzbuzz', function() {
+suite('fizzbuzznum', function() {
   test('1 should return 1', function() {
     assert.equal('1', fizzbuzznum(1));
   });
@@ -19,6 +20,15 @@ suite('fizzbuzz', function() {
   });
   test('15 should return FizzBuzz', function() {
     assert.equal('FizzBuzz', fizzbuzznum(15));
+  })
+});
+
+suite('fizzbuzz_general', function() {
+  test('1-3 should be 1, 2, Fizz', function() {
+    var lines = [];
+    var printer = function(line) {lines.push(line);};
+    fizzbuzz_general([1, 2, 3], printer);
+    assert.deepEqual(['1', '2', 'Fizz'], lines);
   })
 });
 

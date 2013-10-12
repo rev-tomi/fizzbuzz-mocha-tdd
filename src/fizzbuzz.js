@@ -4,7 +4,15 @@ function fizzbuzznum(num) {
   if (isFizz && isBuzz) return 'FizzBuzz';
   if (isFizz) return 'Fizz';
   if (isBuzz) return 'Buzz';
-  return num;
+  return String(num);
+}
+
+function fizzbuzz_general(numbers, printer) {
+  for (var i = 0; i < numbers.length; i++) {
+    var num = numbers[i];
+    printer(fizzbuzznum(num));
+  }
 }
 
 module.exports.fizzbuzznum = fizzbuzznum
+module.exports.fizzbuzz_general = fizzbuzz_general
