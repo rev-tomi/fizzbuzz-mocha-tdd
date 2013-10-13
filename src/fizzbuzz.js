@@ -16,3 +16,13 @@ function fizzbuzz_general(numbers, printer) {
 
 module.exports.fizzbuzznum = fizzbuzznum
 module.exports.fizzbuzz_general = fizzbuzz_general
+
+function fizzbuzz() {
+  var numbers = [];
+  for (var i = 1; i <= 100; i++) {
+    numbers.push(i);
+  }
+  printer = function(line) {console.log(line);};
+  fizzbuzz_general(numbers, printer);
+}
+
